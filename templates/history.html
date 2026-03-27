@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reports</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            color: white;
+
+            background: url("/static/br.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            margin-top: 40px;
+
+            background: rgba(0,0,0,0.6);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: rgba(0,0,0,0.8);
+            font-size: 16px;
+        }
+
+        tr {
+            transition: 0.3s;
+        }
+
+        tr:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.01);
+        }
+
+        td {
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* RESULT COLORS */
+        .good {
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        .bad {
+            color: #ff4d4d;
+            font-weight: bold;
+        }
+
+        /* BUTTON */
+        .btn {
+            padding: 6px 12px;
+            background: #00c853;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #009624;
+            transform: scale(1.05);
+        }
+
+        /* BACK BUTTON */
+        .back-btn {
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📊 Health Reports</h1>
+
+    <table>
+        <tr>
+            <th>Date & Time</th>
+            <th>Inputs</th>
+            <th>Result</th>
+            <th>Download</th>
+        </tr>
+
+        {% for d in data %}
+        <tr>
+            <td>{{ d.time }}</td>
+
+            <td>
+                {% for val in d.inputs %}
+                    {{ val }},
+                {% endfor %}
+            </td>
+
+            <td>
+                {% if "No Heart" in d.result %}
+                    <span class="good">{{ d.result }}</span>
+                {% else %}
+                    <span class="bad">{{ d.result }}</span>
+                {% endif %}
+            </td>
+
+            <td>
+                <a href="{{ url_for('download', id=d.id) }}">
+                    <button class="btn">⬇ Download</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{{ url_for('home') }}">
+        <button class="btn back-btn">⬅ Back to Home</button>
+    </a>
+
+</div>
+
+</body>
+</html>

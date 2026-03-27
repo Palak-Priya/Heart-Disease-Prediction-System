@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Symptoms</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        .box {
+            display: flex;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            align-items: center;
+        }
+
+        .text {
+            width: 60%;
+        }
+
+        .image {
+            width: 40%;
+            text-align: center;
+        }
+
+        .image img {
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 10px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>💖 Symptoms of Heart Disease</h1>
+
+    <div class="box">
+
+        <div class="text">
+            <h2>Common Symptoms</h2>
+
+            <ul>
+                <li>Chest pain or discomfort (Angina)</li>
+                <li>Shortness of breath</li>
+                <li>Fatigue or weakness</li>
+                <li>Irregular heartbeat (Palpitations)</li>
+                <li>Swelling in legs or ankles</li>
+                <li>Dizziness or fainting</li>
+                <li>Pain in arms, neck, jaw or back</li>
+            </ul>
+        </div>
+
+        <div class="image">
+            <img src="/static/heart.jpg" alt="Heart Image">
+        </div>
+
+    </div>
+
+    <a href="{{ url_for('home') }}">
+        <button class="btn">⬅ Back to Home</button>
+    </a>
+
+</div>
+
+</body>
+</html>

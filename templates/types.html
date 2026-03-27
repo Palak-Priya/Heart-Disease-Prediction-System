@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Types of Heart Disease</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f4f7fb;
+        }
+
+        .container {
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a3c5e;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            text-decoration: none;
+            color: black;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card h3 {
+            color: #1a3c5e;
+        }
+
+        .back-btn {
+            margin-top: 40px;
+            padding: 10px 20px;
+            background: #1a3c5e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: #16324a;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>❤️ Types of Heart Disease</h1>
+
+    <div class="cards">
+
+        <!-- 1 -->
+        <a href="{{ url_for('type_detail', name='cad') }}" class="card">
+            <img src="/static/type1.jpg">
+            <div class="card-content">
+                <h3>Coronary Artery Disease</h3>
+                <p>Coronary artery disease (CAD) is a common heart condition caused by atherosclerosis, where plaque (fats, cholesterol) builds up in the arteries supplying blood to the heart, narrowing them and reducing oxygen flow. This chronic process leads to angina, heart attacks, or heart failure. Symptoms include chest pain and shortness of breath, managed with lifestyle changes, medicine, or procedures.</p>
+            </div>
+        </a>
+
+        <!-- 2 -->
+        <a href="{{ url_for('type_detail', name='failure') }}" class="card">
+            <img src="/static/type2.jpg">
+            <div class="card-content">
+                <h3>Heart Failure</h3>
+                <p>Heart failure, often called congestive heart failure (CHF), is a chronic, progressive condition in which the heart muscle is unable to pump enough blood to meet the body's needs for oxygen and nutrients. It does not mean the heart has stopped working, but rather that it is not working as efficiently as it should. As the heart's pumping power decreases, blood backs up, causing fluid to build up (congestion) in the lungs, legs, and other tissues.</p>
+            </div>
+        </a>
+
+        <!-- 3 -->
+        <a href="{{ url_for('type_detail', name='arrhythmia') }}" class="card">
+            <img src="/static/type3.jpeg">
+            <div class="card-content">
+                <h3>Arrhythmia</h3>
+                <p>An arrhythmia is a disorder of the heart's rate or rhythm, causing it to beat too fast, too slow, or in an irregular pattern. It is essentially a disruption in the electrical impulses that coordinate heart contractions, which can range from harmless, temporary palpitations to life-threatening conditions. 
+1. Types of Arrhythmias
+Arrhythmias are classified by their speed and where they begin in the heart: 
+Tachycardia (Fast): Resting heart rate is higher than 100 beats per minute (bpm).
+Bradycardia (Slow): Resting heart rate is less than 60 bpm.
+Premature Heartbeats: Extra, premature contractions that may feel like a skipped beat.
+Fibrillation: Chaotic, uncoordinated, and rapid muscle contractions.</p>
+            </div>
+        </a>
+
+        <!-- 4 -->
+        <a href="{{ url_for('type_detail', name='cardio') }}" class="card">
+            <img src="/static/type4.jpg">
+            <div class="card-content">
+                <h3>Cardiomyopathy</h3>
+                <p>Cardiomyopathy is a disease of the heart muscle (myocardium) that makes it harder for the heart to pump blood to the rest of the body, often leading to heart failure, arrhythmias, or severe complications. It causes the heart muscle to become enlarged, thick, or rigid. Common symptoms include fatigue, dizziness, and shortness of breath.</p>
+            </div>
+        </a>
+
+        <!-- 5 -->
+        <a href="{{ url_for('type_detail', name='valve') }}" class="card">
+            <img src="/static/type5.jpg">
+            <div class="card-content">
+                <h3>Valve Disease</h3>
+                <p>Heart valves not working properly,Heart valve disease occurs when one or more of the heart’s four valves (aortic, mitral, tricuspid, pulmonary) do not function properly, disrupting blood flow. It causes valves to leak (regurgitation) or stiffen (stenosis), forcing the heart to work harder, which may cause fatigue, shortness of breath, palpitations, and chest pain. </p>
+            </div>
+        </a>
+
+        <!-- 6 -->
+        <a href="{{ url_for('type_detail', name='congenital') }}" class="card">
+            <img src="/static/type6.jpg">
+            <div class="card-content">
+                <h3>Congenital Disease</h3>
+                <p>Heart problem from birth,ongenital heart disease (CHD) is a structural, functional, or vessel abnormality of the heart present at birth, affecting roughly 1% of live births. Caused by improper fetal development, it ranges from minor issues to severe malfunctions requiring surgery, with nearly 95% of children surviving into adulthood due to improved care.</p>
+            </div>
+        </a>
+
+        <!-- 7 -->
+        <a href="{{ url_for('type_detail', name='pericardial') }}" class="card">
+            <img src="/static/type7.jpg">
+            <div class="card-content">
+                <h3>pericardial Disease</h3>
+                <p>Inflammation around heart lining,Pericardial diseases are conditions affecting the pericardium—the thin, two-layered sac surrounding the heart—often causing inflammation (pericarditis) or fluid buildup (effusion). Key types include acute, chronic, or recurrent pericarditis and tamponade. Symptoms frequently involve sharp, positional chest pain, while treatment typically involves anti-inflammatories.</p>
+            </div>
+        </a>
+
+    </div>
+
+    <a href="{{ url_for('home') }}">
+        <button class="back-btn">⬅ Back to Home</button>
+    </a>
+
+</div>
+
+</body>
+</html>
