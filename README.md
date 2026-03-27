@@ -49,7 +49,7 @@ Currently using a dummy model for demonstration. Real ML model can be integrated
 ## ▶️ How to Run Project
 
 1. Clone the repository:
-   git clone https://github.com/your-username/heart-disease-prediction-system.git
+   git clone https://github.com/Palak-Priya/Heart-Disease-Prediction-System.git
 
 2. Go to project folder:
    cd heart-disease-prediction-system
